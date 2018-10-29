@@ -46,7 +46,7 @@ export default class Main extends Component {
             <ImageCard
               data={item.show}
               key={item.show.id}
-              //onPress={() => navigation.navigate(STARGATE_DETAILS, ({ show: item.show, onGoBack: this.onGoBack}))}
+              onPress={() => navigation.navigate(STARGATE_DETAILS, ({ show: item.show, onGoBack: this.onGoBack}))}
             />
           ))}
         </Layout>

@@ -2,15 +2,15 @@ import React, {Component} from 'react'
 import { View } from 'react-native'
 import { Header, Layout, ImageCard } from '../components/uikit'
 import {
-  STARGATE_DETAILS
+  SPIDER_DETAILS
 } from '../routes'
 import { WHITE, BLUE } from '../../constants'
 
-const url = 'https://api.tvmaze.com/search/shows?q=stargate'
+const url = 'https://api.tvmaze.com/search/shows?q=spider-man'
 
 export default class Main extends Component {
   state = {
-    title: 'STAR GATE',
+    title: 'SPIDERMAN',
     data: []
   }
 
@@ -36,17 +36,17 @@ export default class Main extends Component {
       <View>
         <Header
           title={title}
-          headerColor={BLUE}
+          //headerColor={BLUE}
           onPress={() => navigation.openDrawer()}
           leftIcon='ios-menu'
-          leftColor={WHITE}
+          leftColor='#fff'
         />
         <Layout>
           { data.map(item => (
             <ImageCard
               data={item.show}
               key={item.show.id}
-              //onPress={() => navigation.navigate(STARGATE_DETAILS, ({ show: item.show, onGoBack: this.onGoBack}))}
+              onPress={() => navigation.navigate(SPIDER_DETAILS, ({ show: item.show, onGoBack: this.onGoBack}))}
             />
           ))}
         </Layout>
